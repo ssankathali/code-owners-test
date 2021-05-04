@@ -1,0 +1,42 @@
+{
+  "npmScope": "workspace",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "tiny-app": {
+      "tags": ["scope:tiny", "type:app"],
+      "implicitDependencies": ["shared-assets", "shared-styles"]
+    },
+    "tiny-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["tiny-app"]
+    },
+    "shared-assets": {
+      "tags": ["scope:shared", "type:assets"]
+    },
+    "shared-styles": {
+      "tags": ["scope:shared", "type:styles"]
+    },
+    "shared-environments": {
+      "tags": ["scope:shared", "type:environments"]
+    },
+    "shared-data-access": {
+      "tags": ["scope:shared", "type:data-access"]
+    },
+    "shop-keeper": {
+      "tags": []
+    },
+    "shop-keeper-e2e": {
+      "tags": [],
+      "implicitDependencies": ["shop-keeper"]
+    }
+  }
+}
